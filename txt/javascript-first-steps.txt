@@ -1,0 +1,181 @@
+JavaScript: From First Steps to Professional
+  DOM
+    Changing a Web Page
+    00:11:31: Difference between undefined and null
+
+undefined: variable hasn't been 
+              declared
+
+null: variable has been declared and was set to contain nothing on 
+              purpose
+              https://frontendmasters.com/courses/javascript-first-steps/changing-a-web-page?t=691
+    
+  Expressions
+    Evaluating Code
+    00:15:43: JS doesn't have pointers
+
+Objects are passed around by passing a copy of a 
+              reference. The programmer cannot access any C-like "value" representing the 
+              address of an object.
+              https://frontendmasters.com/courses/javascript-first-steps/evaluating-code?t=943
+    
+  Arrays
+    Arrays
+    00:05:23: array.includes() method to check if an array or a string includes a certain 
+              value
+              https://frontendmasters.com/courses/javascript-first-steps/arrays?t=323
+    
+    00:05:23: Primitive Datatypes (strings, numbers, booleans) are immutable and can't be 
+              mutated, while other datatypes like arrays are mutable.
+              https://frontendmasters.com/courses/javascript-first-steps/arrays?t=323
+    
+    Immutable Variables & Values
+    00:03:42: It is possible to have an immutable "pointer" to a mutable value. E.g. when a 
+              const variable is assigned to an array, this array is still mutable.
+              https://frontendmasters.com/courses/javascript-first-steps/immutable-variables-values?t=222
+    
+    Variables & Arrays
+    00:05:38: Two different variables can point to the same object
+              https://frontendmasters.com/courses/javascript-first-steps/variables-arrays?t=338
+    
+    00:08:31: General rule of thumb: always use const and only use let if you expect a 
+              variable to be changed later
+              https://frontendmasters.com/courses/javascript-first-steps/variables-arrays?t=511
+    
+  Objects
+    Visualizing Object Access
+    00:06:48: Arrays are also typeof object
+              https://frontendmasters.com/courses/javascript-first-steps/visualizing-object-access?t=408
+    
+    Objects Exercise
+    00:04:53: use Object.freeze(obj) to make an object immutable. Also works with arrays.
+              https://frontendmasters.com/courses/javascript-first-steps/objects-exercise?t=293
+    
+    00:13:16: Javascript is very "loosy goosy" when it comes to function arguments.
+
+e.g. 
+              calling a function with less than the expected arguments will assign undefined 
+              to the arguments that are not defined
+              https://frontendmasters.com/courses/javascript-first-steps/objects-exercise?t=796
+    
+  Quiz Project Functions
+    Quiz Project Disable & Enable Solution
+    00:05:39: el.setAttribute(attribute, value) for setting an attribute for an element in the 
+              DOM
+
+el.removeAttribute(attribute) for removing an attribute for an element in 
+              the DOM
+              https://frontendmasters.com/courses/javascript-first-steps/quiz-project-disable-enable-solution?t=339
+    
+    var vs let
+    00:06:55: let and var variables have different scoping rules when it comes to block 
+              scoping. 
+
+Block scoping is implemented e.g. when using if statements and loops. 
+              
+
+In functional scoping var and let behave the same
+              https://frontendmasters.com/courses/javascript-first-steps/var-vs-let?t=415
+    
+  Events & Handlers
+    Event Object
+    00:01:51: Array.prototype.reduce() is used to iterate over the elements of an array and 
+              accumulate a single result.
+              https://frontendmasters.com/courses/javascript-first-steps/event-object?t=111
+    
+  Map & Filter
+    map & filter Exercise
+    00:00:01: filter in JavaScript creates a new array with elements that pass a specified 
+              condition
+              https://frontendmasters.com/courses/javascript-first-steps/map-filter-exercise?t=1
+    
+    00:00:01: map produces a new array by applying a given function to each element of the 
+              original array
+              https://frontendmasters.com/courses/javascript-first-steps/map-filter-exercise?t=1
+    
+    Spread
+    00:02:33: // Merge Array
+[...array1, ...array2]
+
+// Clone Array
+[...array]
+
+// String → 
+              Array
+[...'string']
+
+// Set  → Array
+[...new Set([1,2,3])]
+
+// Node List → 
+              Array
+[...nodeList]
+
+// Arguments → Array
+[...arguments]
+              https://frontendmasters.com/courses/javascript-first-steps/spread?t=153
+    
+    00:04:27: arr.push(...otherArr) will add the items of otherArr to the arr array
+              https://frontendmasters.com/courses/javascript-first-steps/spread?t=267
+    
+  Data Fetching & Promises
+    APIs & fetch
+    00:03:04: An endpoint is a URL that gives back a particular type of resource
+              https://frontendmasters.com/courses/javascript-first-steps/apis-fetch?t=184
+    
+    Working with Promises
+    00:03:39: FULFILLED: This state represents that the asynchronous operation completed 
+              successfully. When a promise is fulfilled, it means that the value promised is 
+              available and can be accessed through the then callback
+
+RESOLVED: The term 
+              "resolved" is more general and can be used to describe a promise that has either 
+              been fulfilled or rejected. In other words, a promise is considered resolved 
+              when it reaches either the "fulfilled" or "rejected" state.
+              https://frontendmasters.com/courses/javascript-first-steps/working-with-promises?t=219
+    
+    Using Await with Promises
+    00:04:28: Responses have a method called json() which reads the body data and evaluate it 
+              as a json object
+
+resp.json() must therefore also be used together with the 
+              await keyword
+              https://frontendmasters.com/courses/javascript-first-steps/using-await-with-promises?t=268
+    
+    00:12:20: Promise.then() was the earlier way to work with asynchronous operations
+              https://frontendmasters.com/courses/javascript-first-steps/using-await-with-promises?t=740
+    
+  Destructuring Data
+    Destructuring Objects & Arrays
+    00:13:00: You can skip values destructuring arrays using a comma e.g. [one, , three] = [1, 
+              2, 3]
+              https://frontendmasters.com/courses/javascript-first-steps/destructuring-objects-arrays?t=780
+    
+    00:13:00: you can pull out some items of an array and store the rest in another array e.g. 
+              [one, two, ...others] = [1, 2, 3, 4, 5] where others = [3, 4, 5]
+              https://frontendmasters.com/courses/javascript-first-steps/destructuring-objects-arrays?t=780
+    
+  Async
+    Async Functions
+    00:04:07: When a function is programmed asynchronously it is necessary to use the await 
+              keyword as well, when calling the function
+              https://frontendmasters.com/courses/javascript-first-steps/async-functions?t=247
+    
+  Modules
+    Modules
+    00:05:15: async functions are only available in async functions, async generators and 
+              modules
+              https://frontendmasters.com/courses/javascript-first-steps/modules?t=315
+    
+    00:07:47: Modules create their own scope. To use things in another file it is necessary to 
+              export it in the module and import it into the other file
+              https://frontendmasters.com/courses/javascript-first-steps/modules?t=467
+    
+    Browser Debugger
+    00:01:41: Using the debugger keyword in the code to stop the code at a certain break point
+              https://frontendmasters.com/courses/javascript-first-steps/browser-debugger?t=101
+    
+    00:10:04: When debugging you can stop at a certain position and than use the browswers 
+              console to explore variables etc.
+              https://frontendmasters.com/courses/javascript-first-steps/browser-debugger?t=604
+    

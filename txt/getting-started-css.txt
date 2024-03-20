@@ -1,0 +1,107 @@
+Getting Started with CSS
+  Text
+    Creating HTML Text Practice
+    00:05:18: Use the section tag for a sectionj of your web-page
+              https://frontendmasters.com/courses/getting-started-css/creating-html-text-practice?t=318
+    
+    00:05:28: Use the article tag for something that can stand on its own, while section is 
+              part of a larger whole
+              https://frontendmasters.com/courses/getting-started-css/creating-html-text-practice?t=328
+    
+    Variables & Styling Setup
+    00:03:51: Setting box-sizing: border-box; on an element, means that the width and height 
+              of the element will include both its content and padding, but not the border or 
+              margin.
+              https://frontendmasters.com/courses/getting-started-css/variables-styling-setup?t=231
+    
+    00:05:58: setting padding and margin on the body to 0 it stretches the children elements 
+              until the end of the screen
+              https://frontendmasters.com/courses/getting-started-css/variables-styling-setup?t=358
+    
+    00:12:55: The universal selector references everything inside your (html) document
+              https://frontendmasters.com/courses/getting-started-css/variables-styling-setup?t=775
+    
+    00:12:55: It is common to override the default box sizing (content box) to be using border 
+              box
+              https://frontendmasters.com/courses/getting-started-css/variables-styling-setup?t=775
+    
+    Styling HTML Text
+    00:01:50: The measure em stands for width of the letter m
+              https://frontendmasters.com/courses/getting-started-css/styling-html-text?t=110
+    
+    00:03:39: margin collapsing -> Only in vertical direction. Horizontally margins would add 
+              on each other
+              https://frontendmasters.com/courses/getting-started-css/styling-html-text?t=219
+    
+    00:06:42: Accessibility Recommendation: Links inside of text should have an underline. 10% 
+              of population are color blind.
+              https://frontendmasters.com/courses/getting-started-css/styling-html-text?t=402
+    
+    Styling the Intro Section
+    00:02:25: sizing em is in reference to the elements parent element. rem is referencing the 
+              root element (sizing of body/ html element). It is recommended to always use rem 
+              measure, when styling fonts
+              https://frontendmasters.com/courses/getting-started-css/styling-the-intro-section?t=145
+    
+  Navigation
+    Nav Bar HTML Practice
+    00:05:46: target="_blank" within an a tag will open link in new browser window
+              https://frontendmasters.com/courses/getting-started-css/nav-bar-html-practice?t=346
+    
+    Styling a Navbar with Flexbox
+    00:07:12: flex-flow combining flex-wrap and flex-direction in one rule
+              https://frontendmasters.com/courses/getting-started-css/styling-a-navbar-with-flexbox?t=432
+    
+    00:07:12: align-items: like justify-content but vertically
+              https://frontendmasters.com/courses/getting-started-css/styling-a-navbar-with-flexbox?t=432
+    
+    Styling Navbar Links
+    00:06:45: flex-basis is preferred compared to setting the width when using flexbox as it 
+              grows and shrinks proportionally 
+
+flex basis can be used by using flex: 0 0 
+              100% or by flex-basis:100%
+              https://frontendmasters.com/courses/getting-started-css/styling-navbar-links?t=405
+    
+    Font Awesome Icons
+    00:10:41: The CSS attribute selector is can be used to target the <i> elements from 
+              awesome fonts.
+
+Attribute selectors are matching elements based on the element 
+              having a given attribute explicitly set, with options for defining an attribute 
+              value or substring value match.
+              https://frontendmasters.com/courses/getting-started-css/font-awesome-icons?t=641
+    
+    Navbar Icon Practice
+    00:03:03: Different way would be to use a pseudo class on the tag that contains the name
+              https://frontendmasters.com/courses/getting-started-css/navbar-icon-practice?t=183
+    
+  Additional Styles
+    Styling a Call to Action Button
+    00:01:16: Call to action button is used as a link here as button element would only be 
+              used to execute some JS. Here it's just linking somewhere else.
+              https://frontendmasters.com/courses/getting-started-css/styling-a-call-to-action-button?t=76
+    
+    Making a Navbar Responsive
+    00:05:14: using margin right together with flexbox to push the name all the way to the 
+              left
+              https://frontendmasters.com/courses/getting-started-css/making-a-navbar-responsive?t=314
+    
+  Detailed Styles
+    Styling Page Sections
+    00:02:46: Remember to stay out of TRBL (top right bottom left)
+              https://frontendmasters.com/courses/getting-started-css/styling-page-sections?t=166
+    
+  Portfolio
+    Portfolio Projects Section Markup
+    00:04:52: Use article here for project content as each project is standalone content
+              https://frontendmasters.com/courses/getting-started-css/portfolio-projects-section-markup?t=292
+    
+    Responsive Projects Layout
+    00:01:42: Note on Flexbox vs Grid: Grid can overlap two items while Flexbox cannot
+              https://frontendmasters.com/courses/getting-started-css/responsive-projects-layout?t=102
+    
+    Overlapping Items with CSS Grid
+    00:02:51: By default each element inside of a grid parent element is put in 1fr each
+              https://frontendmasters.com/courses/getting-started-css/overlapping-items-with-css-grid?t=171
+    

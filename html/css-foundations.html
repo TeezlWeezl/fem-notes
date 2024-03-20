@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS Foundations | Frontend Masters</title>
+    <style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 16px;
+			margin: 0;
+			padding: 30px;
+			background-color: #111;
+			color: #fff; 
+		}
+		
+		h2 {
+				background-color: #333;
+				color: #ccc;
+				padding: 10px;
+		}
+		h3 {
+			border-bottom: 1px solid #333;
+			padding-bottom: 6px;
+		}
+		
+		td {
+		 padding: 3px 0;
+					}
+					td a {
+							color: #ccc;
+							text-decoration: none;
+							padding-right: 20px;
+					}
+					td p {
+							display: inline;
+							margin: 0;
+							padding: 0px;
+					}
+					td p a {
+							color: #5baec0;
+							text-decoration: underline;
+					}
+					h1 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					h3 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					p a {
+							padding: 0px;
+					}
+					code {
+							background-color: #1e3134;
+							padding: 3px;
+			}
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://frontendmasters.com/courses/css-foundations/" target="_blank">CSS Foundations</a></h1>
+    <h2>Introduction</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/introduction" target="_blank">Introduction</a></h3>
+    <h2>CSS Basics</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/css-history-basics" target="_blank">CSS History & Basics</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/selectors" target="_blank">Selectors</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/specificity" target="_blank">Specificity</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/color" target="_blank">Color</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/fonts-typography" target="_blank">Fonts & Typography</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/fonts-typography?t=19" target="_blank">00:00:19</a></td><td><p>It&rsquo;s good practice to set quotation marks for font families that have a white space</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/fonts-typography?t=450" target="_blank">00:07:30</a></td><td><p>em and rem will scale depending on the users default fonts size, while pixels will not</p>
+</td></tr>
+    </table>
+    <h2>Project</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/project-setup" target="_blank">Project Setup</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/landing-page-css-html" target="_blank">Landing Page CSS & HTML</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/landing-page-css-html?t=558" target="_blank">00:09:18</a></td><td><p>When downloading fonts they must be added using @font-face declaration in the css file</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/creating-base-css-file-variables" target="_blank">Creating Base CSS File & Variables</a></h3>
+    <h2>Layout</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/layout-methods-history" target="_blank">Layout Methods History</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/flexbox-grid" target="_blank">Flexbox & Grid</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/combinators" target="_blank">Combinators</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/combinators?t=164" target="_blank">00:02:44</a></td><td><p>Adjacent Sibling Combinator: h1 + p -&gt; Sibling under the same parent (only first one)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/combinators?t=244" target="_blank">00:04:04</a></td><td><p>General Sibling combinator: p ~ code -&gt; Siblings under the same parent (all)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/combinators?t=521" target="_blank">00:08:41</a></td><td><p>Grid vs Flexbox: Flexbox is used for one dimensional layouts while grid is used for multidimensional layouts</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/block-element-modifier-bem" target="_blank">Block Element Modifier (BEM)</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/block-element-modifier-bem?t=58" target="_blank">00:00:58</a></td><td><p>BEM (naming convention for classes)</p>
+
+<p>Block: Standalone entity that is meaningful on its own</p>
+
+<p>e.g. header menu input</p>
+
+<p>Element: Part of a block, not necessarily needs to have an own meaning</p>
+
+<p>e.g. Menu item, list item, header title</p>
+
+<p>Modifier: Something that modefies the element</p>
+
+<p>e.g. disabled highlighted checked etc.</p>
+
+<hr />
+
+<p>.block__element&ndash;modifier</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/css-header" target="_blank">CSS Header</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/getting-started-with-css-q-a" target="_blank">Getting Started with CSS Q&A</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/the-box-model" target="_blank">The Box Model</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/the-box-model?t=120" target="_blank">00:02:00</a></td><td><p>Standard box model uses width + padding + border, so e.g. defining the width will not give you the &ldquo;real&rdquo; width of the box</p>
+
+<p>Therefore in most cases you use the &ldquo;alternative&rdquo; box model which is box-sizing: border-box</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/z-index-positioning" target="_blank">Z-Index & Positioning</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/z-index-positioning?t=281" target="_blank">00:04:41</a></td><td><p>In order to position an element with position relative correctly its parent must be position relative as well</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/z-index-positioning?t=488" target="_blank">00:08:08</a></td><td><p>Position fixed is always on the same spot while scrolling</p>
+
+<p>Position sticky will stop after it reaches the end of its parent container</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/border-border-radius" target="_blank">Border & Border Radius</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/background-dropshadow-cursor" target="_blank">Background, Dropshadow & Cursor</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/pseudo-classes-elements-transitions" target="_blank">Pseudo Classes, Elements & Transitions</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/pseudo-classes-elements-transitions?t=337" target="_blank">00:05:37</a></td><td><p>Transition declarations:</p>
+
+<p>transition-property
+transition-duration
+transition-timing-function</p>
+
+<p>Can be used in one transition declaration:</p>
+
+<p>e.g. transition: background .2s ease-in</p>
+</td></tr>
+    </table>
+    <h2>Interactive & Responsive UI</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/home-page-layout" target="_blank">Home Page Layout</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/home-page-layout?t=346" target="_blank">00:05:46</a></td><td><p>For semantic reasons it can be useful to declare a variable in the :root that is using another variable</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons" target="_blank">Styling Interactive Buttons</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=341" target="_blank">00:05:41</a></td><td><p>margin-inline-end defines the logical inline end margin of an element, which maps to a physical margin depending on the element&rsquo;s writing mode, directionality, and text orientation. (MDN)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=430" target="_blank">00:07:10</a></td><td><p>The vertical-align CSS property sets vertical alignment of an inline, inline-block or table-cell box. (MDN)</p>
+
+<p>It is possible to vertically align with flexbox but if possible it is recommended to avoid that for &ldquo;smaller&rdquo; things</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=595" target="_blank">00:09:55</a></td><td><p>The outline property in CSS draws a line around the outside of an element. It’s similar to border except that:</p>
+
+<p>It always goes around all the sides, you can’t specify particular sides
+It’s not a part of the box model, so it won’t affect the position of the element or adjacent elements (nice for debugging!)</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/svg" target="_blank">SVG</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/align-items-q-a" target="_blank">Align Items Q&A</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/align-items-q-a?t=298" target="_blank">00:04:58</a></td><td><p>align-iteme: baseline =&gt; items are aligned such as their baselines align</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout" target="_blank">Speakers Image & Grid Layout</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=63" target="_blank">00:01:03</a></td><td><p>VS Code hack: Cmd+D adds multi-cursor at the next item that matches selection</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=417" target="_blank">00:06:57</a></td><td><p>Images with a defined width and height can be distorted. Use object-fit (parent) and object-position (child) to fix those.</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=465" target="_blank">00:07:45</a></td><td><p>instead of @media(min-width: 1000px) one can also use @media(width &lt; 1000px), which is easier to read</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/responsive-layout-with-media-queries" target="_blank">Responsive Layout with Media Queries</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/mobile-header-layout" target="_blank">Mobile Header Layout</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/css-foundations/mobile-header-layout?t=155" target="_blank">00:02:35</a></td><td><p>display: none will remove item from the DOM while visibility: hidden will just hide it, but it&rsquo;s still in the DOM</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/mobile-navigation-menu" target="_blank">Mobile Navigation Menu</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/menu-transition-color-scrolling" target="_blank">Menu Transition, Color & Scrolling</a></h3>
+    <h2>Wrapping Up</h2>
+    <h3><a href="https://frontendmasters.com/courses/css-foundations/wrapping-up" target="_blank">Wrapping Up</a></h3>
+    </body>
+</html>

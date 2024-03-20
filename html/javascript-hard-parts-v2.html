@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JavaScript: The Hard Parts, v2 | Frontend Masters</title>
+    <style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 16px;
+			margin: 0;
+			padding: 30px;
+			background-color: #111;
+			color: #fff; 
+		}
+		
+		h2 {
+				background-color: #333;
+				color: #ccc;
+				padding: 10px;
+		}
+		h3 {
+			border-bottom: 1px solid #333;
+			padding-bottom: 6px;
+		}
+		
+		td {
+		 padding: 3px 0;
+					}
+					td a {
+							color: #ccc;
+							text-decoration: none;
+							padding-right: 20px;
+					}
+					td p {
+							display: inline;
+							margin: 0;
+							padding: 0px;
+					}
+					td p a {
+							color: #5baec0;
+							text-decoration: underline;
+					}
+					h1 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					h3 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					p a {
+							padding: 0px;
+					}
+					code {
+							background-color: #1e3134;
+							padding: 3px;
+			}
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/" target="_blank">JavaScript: The Hard Parts, v2</a></h1>
+    <h2>Introduction</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/introduction" target="_blank">Introduction</a></h3>
+    <h2>JavaScript Principles</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/thread-of-execution" target="_blank">Thread of Execution</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/functions" target="_blank">Functions</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/functions?t=218" target="_blank">00:03:38</a></td><td><p>parameter: placeholder in the function where the argument is passed to</p>
+
+<p>argument: actual value that is passed in</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/call-stack" target="_blank">Call Stack</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/call-stack?t=214" target="_blank">00:03:34</a></td><td><p>The call stack is a crucial concept in JavaScript&rsquo;s runtime environment, representing the mechanism by which the JavaScript engine keeps track of function calls in a program. It operates as a Last In, First Out (LIFO) data structure, meaning that the last function called is the first one to be resolved.</p>
+</td></tr>
+    </table>
+    <h2>Functions & Callbacks</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions" target="_blank">Generalized Functions</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions?t=152" target="_blank">00:02:32</a></td><td><p>Core principle in programming: DRY (Don&rsquo;t repeat yourself)</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/repeating-functionality" target="_blank">Repeating Functionality</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/higher-order-functions" target="_blank">Higher Order Functions</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/higher-order-functions-example" target="_blank">Higher Order Functions Example</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/higher-order-functions-q-a" target="_blank">Higher Order Functions Q&A</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/higher-order-functions-q-a?t=107" target="_blank">00:01:47</a></td><td><p>Loops doesn&rsquo;t get its own execution context, meaning they are not added to the call stack. But it gets its own protected name space where it is not possible to use variable outside of the block scope.</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callbacks-higher-order-functions" target="_blank">Callbacks & Higher Order Functions</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callbacks-higher-order-functions?t=142" target="_blank">00:02:22</a></td><td><p>HOF takes in a function or passes out a function (called closure)</p>
+
+<p>A higher order function takes a callback function as an argument</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-functions" target="_blank">Arrow Functions</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-functions?t=642" target="_blank">00:10:42</a></td><td><p>The value of this in an arrow function is inherited from the enclosing (lexical) scope.</p>
+
+<p>As the value of this is dynamically given based on the function invocation, it is sometimes called dynamic this .</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/pair-programming" target="_blank">Pair Programming</a></h3>
+    <h2>Closure</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-introduction" target="_blank">Closure Introduction</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-introduction?t=249" target="_blank">00:04:09</a></td><td><p>General definition of state: The live data at a particular moment in my application that is being stored.</p>
+
+<p>In the context of a function the local memory is the state</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/returning-functions" target="_blank">Returning Functions</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/nested-function-scope" target="_blank">Nested Function Scope</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/retaining-function-memory" target="_blank">Retaining Function Memory</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/function-closure" target="_blank">Function Closure</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/function-closure?t=465" target="_blank">00:07:45</a></td><td><p>Example from the closure lecture:</p>
+
+<pre><code>function outer() {
+    let i = 0
+    function inner() {
+        if (i &gt; 0) {
+            console.log(&quot;Sorry function can't run more than once&quot;)
+            return
+        }
+        i++
+        console.log(&quot;Inner runs &quot;, i)
+    }
+    return inner
+}
+</code></pre>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-q-a" target="_blank">Closure Q&A</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-technical-definition-review" target="_blank">Closure Technical Definition & Review</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-technical-definition-review?t=182" target="_blank">00:03:02</a></td><td><p>Backpack = C.O.V.E (Closed over variable environment)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-technical-definition-review?t=332" target="_blank">00:05:32</a></td><td><p>JavaScript is a static or lexical scoped language.</p>
+
+<p>The data in the C.O.V.E. is Persistend Lexical or Static Referenced Data (P.L.S.R.D.) aka Closure</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/multiple-closure-instances" target="_blank">Multiple Closure Instances</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/practical-applications" target="_blank">Practical Applications</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-exercises" target="_blank">Closure Exercises</a></h3>
+    <h2>Asynchronous JavaScript</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/single-threaded-execution-review" target="_blank">Single Threaded Execution Review</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/asynchronicity-in-javascript" target="_blank">Asynchronicity in JavaScript</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/asynchronous-browser-features" target="_blank">Asynchronous Browser Features</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/asynchronous-browser-features?t=356" target="_blank">00:05:56</a></td><td><p>There are a lot of features in the browser which are not written in JS like, HTML DOM / Timer / Console / Network Requests, however JS has an interface to access those features (aka Web API) e.g. setTimeout(), document, console etc..</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-api-example" target="_blank">Web API Example</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-api-rules" target="_blank">Web API Rules</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callback-queue-event-loop" target="_blank">Callback Queue & Event Loop</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callback-queue-event-loop?t=745" target="_blank">00:12:25</a></td><td><p>The callback queue ALWAYS runs last. Even though we have <code>setTimeout(functionToRun, 0)</code>and we have other code in the global execution context, it will only run at that time when the execution context is empty. This feature is known as the <strong>event loop</strong></p>
+
+<p>0ms in the above context means that it takes 0ms for the browser to put <code>functionToRun</code> into the callback queue</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callback-queue-and-event-loop-q-a" target="_blank">Callback Queue and Event Loop Q&A</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/callback-hell-async-exercises" target="_blank">Callback Hell & Async Exercises</a></h3>
+    <h2>Promises</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-introduction" target="_blank">Promises Introduction</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-fetch" target="_blank">Promises Example: fetch</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-fetch?t=365" target="_blank">00:06:05</a></td><td><p>fetch immediately returns an object containing</p>
+
+<pre><code>{
+value: ...,
+&quot;onFulfilled&quot;: ...
+}
+</code></pre>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-fetch?t=590" target="_blank">00:09:50</a></td><td><p>the fetch method doesn&rsquo;t need a callback function. Instead it makes use of the Promise it returns in the first place and returns the result of the request in the value property once it finishes</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-then" target="_blank">Promises Example: then</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-then?t=178" target="_blank">00:02:58</a></td><td><p>onfulfilled is an array of functions that take the value as an input once it returns and will then be executed.</p>
+
+<p>We can&rsquo;t access onfulfilled directly, as it is a hidden property, however the Promise has a built in method (then) which can add functions to the onfulfilled array</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-fetch" target="_blank">Web APIs & Promises Example: fetch</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-then" target="_blank">Web APIs & Promises Example: then</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-microtask-queue" target="_blank">Web APIs & Promises Example: Microtask Queue</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-microtask-queue?t=137" target="_blank">00:02:17</a></td><td><p>Besides the Callback Queue (aka Task Queue) there is another queue for asynchronous tasks like promise fulfillments, so called microtask queue</p>
+
+<p>The microtask queue runs before the callback queue</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-and-asynchronous-q-a" target="_blank">Promises and Asynchronous Q&A</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-review" target="_blank">Promises Review</a></h3>
+    <h2>Classes & Prototypes</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/class-oop-introduction" target="_blank">Class & OOP Introduction</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/object-dot-notation" target="_blank">Object Dot Notation</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/object-dot-notation?t=237" target="_blank">00:03:57</a></td><td><p>Adding properties to an object using the dot notation user2.name = &ldquo;Tim&rdquo;</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/factory-functions" target="_blank">Factory Functions</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/factory-functions-example" target="_blank">Factory Functions Example</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain" target="_blank">Prototype Chain</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain?t=3" target="_blank">00:00:03</a></td><td><p>prototype chain: prototype is an object that the JS engine looks into when it doesn&rsquo;t find a method on an object</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-prototypal-link" target="_blank">Prototype Chain Example: Prototypal Link</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-prototypal-link?t=416" target="_blank">00:06:56</a></td><td><p>By using Object.create(userFunctionStore) a n object will be returned which is creating the functions passed to userFunctionStore in the prototype object. This is more efficient than storing all the methods to every &ldquo;instance&rdquo; of the original object we want to create.</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-implicit-parameters" target="_blank">Prototype Chain Example: Implicit Parameters</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-implicit-parameters?t=263" target="_blank">00:04:23</a></td><td><p><code>this</code> is an &ldquo;implicit&rdquo; parameter in the <strong>proto</strong> object that always refers to the object where the <strong>proto</strong> object is bound to</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/hasownproperty-method" target="_blank">hasOwnProperty Method</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/hasownproperty-method?t=240" target="_blank">00:04:00</a></td><td><p>In the <strong>proto</strong> object JS has another <strong>proto</strong> object which is a reference to Object.prototype where built in methods and properties for objects are stored</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/hasownproperty-method?t=240" target="_blank">00:04:00</a></td><td><p>For expample Array.prototype returns an object with all the built in methods for arrays</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/this-keyword" target="_blank">this Keyword</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/this-keyword?t=368" target="_blank">00:06:08</a></td><td><p>The this binding can be tricky when encapsulating functions. In the old days there were often used patterns as below</p>
+
+<pre><code>myObj5 = {
+    counter: 0,
+    __proto__: {
+        increment: function() {
+            const that = this
+            function increment() {
+                that.counter++
+            }
+            increment()
+        }
+    }
+}
+</code></pre>
+
+<p>this is because the this binding refers to the surrounding object this =&gt; Function =&gt; Object</p>
+
+<p>One way would be to call <code>increment.call(this)</code> or define the function as an arrow function instead</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-function-scope-this" target="_blank">Arrow Function Scope & this</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-function-scope-this?t=44" target="_blank">00:00:44</a></td><td><p>The <strong>this assignment in arrow functions</strong> is lexically scoped. That means, when we execute the function, what this is set to is determined by where the function was saved.</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-function-scope-this?t=300" target="_blank">00:05:00</a></td><td><p>In general don&rsquo;t user arrow functions in methods of objects</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-review" target="_blank">Prototype Chain Review</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword" target="_blank">new Keyword</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=419" target="_blank">00:06:59</a></td><td><p>Functions in JS are both Objects AND Functions</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=542" target="_blank">00:09:02</a></td><td><pre><code>function add2(a) {
+    return a + 2
+}
+add2.store = 5
+
+add2(2) // uses function because of the parens
+add2.store // uses object properties
+</code></pre>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=655" target="_blank">00:10:55</a></td><td><p>Difference between <code>__proto__</code> and prototype:</p>
+
+<ul>
+<li><p>both are related to the JS protoype chain, but have different purposes</p></li>
+
+<li><p>The prototype property is used in constructor functions.</p></li>
+
+<li><p>Every function in JavaScript has a prototype property, and when you create an object using the new keyword with that function, the newly created object inherits properties and methods from the constructor&rsquo;s prototype.</p></li>
+
+<li><p>The <code>__proto__</code> property is used to access and manipulate the prototype chain directly on an instance of an object.</p></li>
+</ul>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword-example" target="_blank">new Keyword Example</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/class-keyword" target="_blank">class Keyword</a></h3>
+    <h2>Wrapping Up</h2>
+    <h3><a href="https://frontendmasters.com/courses/javascript-hard-parts-v2/wrapping-up" target="_blank">Wrapping Up</a></h3>
+    </body>
+</html>

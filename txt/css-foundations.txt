@@ -1,0 +1,137 @@
+CSS Foundations
+  CSS Basics
+    Fonts & Typography
+    00:00:19: It's good practice to set quotation marks for font families that have a white 
+              space
+              https://frontendmasters.com/courses/css-foundations/fonts-typography?t=19
+    
+    00:07:30: em and rem will scale depending on the users default fonts size, while pixels 
+              will not
+              https://frontendmasters.com/courses/css-foundations/fonts-typography?t=450
+    
+  Project
+    Landing Page CSS & HTML
+    00:09:18: When downloading fonts they must be added using @font-face declaration in the 
+              css file
+              https://frontendmasters.com/courses/css-foundations/landing-page-css-html?t=558
+    
+  Layout
+    Combinators
+    00:02:44: Adjacent Sibling Combinator: h1 + p -> Sibling under the same parent (only first 
+              one)
+              https://frontendmasters.com/courses/css-foundations/combinators?t=164
+    
+    00:04:04: General Sibling combinator: p ~ code -> Siblings under the same parent (all)
+              https://frontendmasters.com/courses/css-foundations/combinators?t=244
+    
+    00:08:41: Grid vs Flexbox: Flexbox is used for one dimensional layouts while grid is used 
+              for multidimensional layouts
+              https://frontendmasters.com/courses/css-foundations/combinators?t=521
+    
+    Block Element Modifier (BEM)
+    00:00:58: BEM (naming convention for classes)
+
+Block: Standalone entity that is meaningful 
+              on its own
+
+e.g. header menu input
+
+Element: Part of a block, not necessarily 
+              needs to have an own meaning
+
+e.g. Menu item, list item, header title
+
+Modifier: 
+              Something that modefies the element
+
+e.g. disabled highlighted checked 
+              etc.
+
+-----
+
+.block__element--modifier
+              https://frontendmasters.com/courses/css-foundations/block-element-modifier-bem?t=58
+    
+    The Box Model
+    00:02:00: Standard box model uses width + padding + border, so e.g. defining the width 
+              will not give you the "real" width of the box
+
+Therefore in most cases you use 
+              the "alternative" box model which is box-sizing: border-box
+              https://frontendmasters.com/courses/css-foundations/the-box-model?t=120
+    
+    Z-Index & Positioning
+    00:04:41: In order to position an element with position relative correctly its parent must 
+              be position relative as well
+              https://frontendmasters.com/courses/css-foundations/z-index-positioning?t=281
+    
+    00:08:08: Position fixed is always on the same spot while scrolling
+
+Position sticky will 
+              stop after it reaches the end of its parent container
+              https://frontendmasters.com/courses/css-foundations/z-index-positioning?t=488
+    
+    Pseudo Classes, Elements & Transitions
+    00:05:37: Transition declarations: 
+              
+
+transition-property
+transition-duration
+transition-timing-function
+
+Can be 
+              used in one transition declaration: 
+
+e.g. transition: background .2s ease-in
+              https://frontendmasters.com/courses/css-foundations/pseudo-classes-elements-transitions?t=337
+    
+  Interactive & Responsive UI
+    Home Page Layout
+    00:05:46: For semantic reasons it can be useful to declare a variable in the :root that is 
+              using another variable
+              https://frontendmasters.com/courses/css-foundations/home-page-layout?t=346
+    
+    Styling Interactive Buttons
+    00:05:41: margin-inline-end defines the logical inline end margin of an element, which 
+              maps to a physical margin depending on the element's writing mode, 
+              directionality, and text orientation. (MDN)
+              https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=341
+    
+    00:07:10: The vertical-align CSS property sets vertical alignment of an inline, 
+              inline-block or table-cell box. (MDN)
+
+It is possible to vertically align with 
+              flexbox but if possible it is recommended to avoid that for "smaller" things
+              https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=430
+    
+    00:09:55: The outline property in CSS draws a line around the outside of an element. 
+              It’s similar to border except that:
+
+It always goes around all the sides, you 
+              can’t specify particular sides
+It’s not a part of the box model, so it 
+              won’t affect the position of the element or adjacent elements (nice for 
+              debugging!)
+              https://frontendmasters.com/courses/css-foundations/styling-interactive-buttons?t=595
+    
+    Align Items Q&A
+    00:04:58: align-iteme: baseline => items are aligned such as their baselines align
+              https://frontendmasters.com/courses/css-foundations/align-items-q-a?t=298
+    
+    Speakers Image & Grid Layout
+    00:01:03: VS Code hack: Cmd+D adds multi-cursor at the next item that matches selection
+              https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=63
+    
+    00:06:57: Images with a defined width and height can be distorted. Use object-fit (parent) 
+              and object-position (child) to fix those.
+              https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=417
+    
+    00:07:45: instead of @media(min-width: 1000px) one can also use @media(width < 1000px), 
+              which is easier to read
+              https://frontendmasters.com/courses/css-foundations/speakers-image-grid-layout?t=465
+    
+    Mobile Header Layout
+    00:02:35: display: none will remove item from the DOM while visibility: hidden will just 
+              hide it, but it's still in the DOM
+              https://frontendmasters.com/courses/css-foundations/mobile-header-layout?t=155
+    

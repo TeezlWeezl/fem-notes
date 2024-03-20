@@ -1,0 +1,237 @@
+JavaScript: The Hard Parts, v2
+  JavaScript Principles
+    Functions
+    00:03:38: parameter: placeholder in the function where the argument is passed 
+              to
+
+argument: actual value that is passed in
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/functions?t=218
+    
+    Call Stack
+    00:03:34: The call stack is a crucial concept in JavaScript's runtime environment, 
+              representing the mechanism by which the JavaScript engine keeps track of 
+              function calls in a program. It operates as a Last In, First Out (LIFO) data 
+              structure, meaning that the last function called is the first one to be 
+              resolved.
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/call-stack?t=214
+    
+  Functions & Callbacks
+    Generalized Functions
+    00:02:32: Core principle in programming: DRY (Don't repeat yourself)
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions?t=152
+    
+    Higher Order Functions Q&A
+    00:01:47: Loops doesn't get its own execution context, meaning they are not added to the 
+              call stack. But it gets its own protected name space where it is not possible to 
+              use variable outside of the block scope.
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/higher-order-functions-q-a?t=107
+    
+    Callbacks & Higher Order Functions
+    00:02:22: HOF takes in a function or passes out a function (called closure)
+
+A higher 
+              order function takes a callback function as an argument
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/callbacks-higher-order-functions?t=142
+    
+    Arrow Functions
+    00:10:42: The value of this in an arrow function is inherited from the enclosing (lexical) 
+              scope.
+
+As the value of this is dynamically given based on the function 
+              invocation, it is sometimes called dynamic this .
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-functions?t=642
+    
+  Closure
+    Closure Introduction
+    00:04:09: General definition of state: The live data at a particular moment in my 
+              application that is being stored.
+
+In the context of a function the local memory 
+              is the state
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-introduction?t=249
+    
+    Function Closure
+    00:07:45: Example from the closure lecture: 
+
+```
+function outer() {
+    let i = 0
+    
+              function inner() {
+        if (i > 0) {
+            console.log("Sorry function 
+              can't run more than once")
+            return
+        }
+        i++
+        
+              console.log("Inner runs ", i)
+    }
+    return inner
+}
+```
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/function-closure?t=465
+    
+    Closure Technical Definition & Review
+    00:03:02: Backpack = C.O.V.E (Closed over variable environment)
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-technical-definition-review?t=182
+    
+    00:05:32: JavaScript is a static or lexical scoped language. 
+
+The data in the C.O.V.E. is 
+              Persistend Lexical or Static Referenced Data (P.L.S.R.D.) aka Closure
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/closure-technical-definition-review?t=332
+    
+  Asynchronous JavaScript
+    Asynchronous Browser Features
+    00:05:56: There are a lot of features in the browser which are not written in JS like, 
+              HTML DOM / Timer / Console / Network Requests, however JS has an interface to 
+              access those features (aka Web API) e.g. setTimeout(), document, console etc..
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/asynchronous-browser-features?t=356
+    
+    Callback Queue & Event Loop
+    00:12:25: The callback queue ALWAYS runs last. Even though we have 
+              `setTimeout(functionToRun, 0)`and we have other code in the global execution 
+              context, it will only run at that time when the execution context is empty. This 
+              feature is known as the **event loop**
+
+0ms in the above context means that it 
+              takes 0ms for the browser to put `functionToRun` into the callback queue
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/callback-queue-event-loop?t=745
+    
+  Promises
+    Promises Example: fetch
+    00:06:05: fetch immediately returns an object containing
+
+```
+{
+value: ...,
+"onFulfilled": 
+              ...
+}
+```
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-fetch?t=365
+    
+    00:09:50: the fetch method doesn't need a callback function. Instead it makes use of the 
+              Promise it returns in the first place and returns the result of the request in 
+              the value property once it finishes
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-fetch?t=590
+    
+    Promises Example: then
+    00:02:58: onfulfilled is an array of functions that take the value as an input once it 
+              returns and will then be executed. 
+
+We can't access onfulfilled directly, as it 
+              is a hidden property, however the Promise has a built in method (then) which can 
+              add functions to the onfulfilled array
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-example-then?t=178
+    
+    Web APIs & Promises Example: Microtask Queue
+    00:02:17: Besides the Callback Queue (aka Task Queue) there is another queue for 
+              asynchronous tasks like promise fulfillments, so called microtask queue
+
+The 
+              microtask queue runs before the callback queue
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-microtask-queue?t=137
+    
+  Classes & Prototypes
+    Object Dot Notation
+    00:03:57: Adding properties to an object using the dot notation user2.name = "Tim"
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/object-dot-notation?t=237
+    
+    Prototype Chain
+    00:00:03: prototype chain: prototype is an object that the JS engine looks into when it 
+              doesn't find a method on an object
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain?t=3
+    
+    Prototype Chain Example: Prototypal Link
+    00:06:56: By using Object.create(userFunctionStore) a n object will be returned which is 
+              creating the functions passed to userFunctionStore in the prototype object. This 
+              is more efficient than storing all the methods to every "instance" of the 
+              original object we want to create.
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-prototypal-link?t=416
+    
+    Prototype Chain Example: Implicit Parameters
+    00:04:23: `this` is an "implicit" parameter in the __proto__ object that always refers to 
+              the object where the __proto__ object is bound to
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-implicit-parameters?t=263
+    
+    hasOwnProperty Method
+    00:04:00: In the __proto__ object JS has another __proto__ object which is a reference to 
+              Object.prototype where built in methods and properties for objects are stored
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/hasownproperty-method?t=240
+    
+    00:04:00: For expample Array.prototype returns an object with all the built in methods for 
+              arrays
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/hasownproperty-method?t=240
+    
+    this Keyword
+    00:06:08: The this binding can be tricky when encapsulating functions. In the old days 
+              there were often used patterns as below
+
+```
+myObj5 = {
+    counter: 0,
+    
+              __proto__: {
+        increment: function() {
+            const that = this
+      
+                    function increment() {
+                that.counter++
+            }
+       
+                   increment()
+        }
+    }
+}
+```
+
+this is because the this binding refers 
+              to the surrounding object this => Function => Object 
+
+One way would be to call 
+              `increment.call(this)` or define the function as an arrow function instead
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/this-keyword?t=368
+    
+    Arrow Function Scope & this
+    00:00:44: The **this assignment in arrow functions** is lexically scoped. That means, when 
+              we execute the function, what this is set to is determined by where the function 
+              was saved.
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-function-scope-this?t=44
+    
+    00:05:00: In general don't user arrow functions in methods of objects
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/arrow-function-scope-this?t=300
+    
+    new Keyword
+    00:06:59: Functions in JS are both Objects AND Functions
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=419
+    
+    00:09:02: ```
+function add2(a) {
+    return a + 2
+}
+add2.store = 5
+
+add2(2) // uses 
+              function because of the parens
+add2.store // uses object properties
+```
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=542
+    
+    00:10:55: Difference between `__proto__` and prototype: 
+
+- both are related to the JS 
+              protoype chain, but have different purposes
+
+- The prototype property is used in 
+              constructor functions.
+- Every function in JavaScript has a prototype property, 
+              and when you create an object using the new keyword with that function, the 
+              newly created object inherits properties and methods from the constructor's 
+              prototype.
+
+- The `__proto__` property is used to access and manipulate the 
+              prototype chain directly on an instance of an object.
+              https://frontendmasters.com/courses/javascript-hard-parts-v2/new-keyword?t=655
+    
