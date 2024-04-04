@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Git In-depth | Frontend Masters</title>
+    <style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 16px;
+			margin: 0;
+			padding: 30px;
+			background-color: #111;
+			color: #fff; 
+		}
+		
+		h2 {
+				background-color: #333;
+				color: #ccc;
+				padding: 10px;
+		}
+		h3 {
+			border-bottom: 1px solid #333;
+			padding-bottom: 6px;
+		}
+		
+		td {
+		 padding: 3px 0;
+					}
+					td a {
+							color: #ccc;
+							text-decoration: none;
+							padding-right: 20px;
+					}
+					td p {
+							display: inline;
+							margin: 0;
+							padding: 0px;
+					}
+					td p a {
+							color: #5baec0;
+							text-decoration: underline;
+					}
+					h1 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					h3 a {
+							color: #5baec0;
+							text-decoration: none;
+					}
+					p a {
+							padding: 0px;
+					}
+					code {
+							background-color: #1e3134;
+							padding: 3px;
+			}
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://frontendmasters.com/courses/git-in-depth/" target="_blank">Git In-depth</a></h1>
+    <h2>Git In-Depth</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/introduction" target="_blank">Introduction</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/course-agenda" target="_blank">Course Agenda</a></h3>
+    <h2>Git Foundations</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/data-storage" target="_blank">Data Storage</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/data-storage?t=20" target="_blank">00:00:20</a></td><td><p>Git essentially operates as a key-value store where</p>
+
+<p>value = data
+key = hash of the data</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-blobs-and-trees" target="_blank">Git Blobs and Trees</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-blobs-and-trees?t=5" target="_blank">00:00:05</a></td><td><p>values are stored in git objects - one basic one is a blob. Git stores compressed data in a blob along with meta data in the header.</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-blobs-and-trees?t=799" target="_blank">00:13:19</a></td><td><p>Git compresses its objects into packfiles where the packfile stores the object itself and the deltas (differences between one version of the file and the next)</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-commits" target="_blank">Git Commits</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-commits?t=20" target="_blank">00:00:20</a></td><td><p>git commits are also git objects that point to a tree and contains metadata like author, date etc..</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-commits?t=127" target="_blank">00:02:07</a></td><td><p>A commit is a code snapshot of the code at a certain point in time</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-commits?t=376" target="_blank">00:06:16</a></td><td><p>When you create a new commit it cannot be changed afterwards as it would result in a different SHA1. This is also a great security feature of Git.</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-commits?t=431" target="_blank">00:07:11</a></td><td><p>References are pointers to commit. It can be tags, branches or HEAD.</p>
+
+<p>HEAD is a pointer to the current commit</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/simple-git-commit-exercise" target="_blank">Simple Git Commit Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/simple-git-commit-solution" target="_blank">Simple Git Commit Solution</a></h3>
+    <h2>Git Areas and Stashing</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository" target="_blank">Working Area, Staging Area, Repository</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=11" target="_blank">00:00:11</a></td><td><p>Three areas in Git:</p>
+
+<ol>
+<li>Working area</li>
+<li>Staging area // git add changes</li>
+<li>Repository // git commit to add changes</li>
+</ol>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=280" target="_blank">00:04:40</a></td><td><p>Remove / Rename a file in your next commit with</p>
+
+<p><code>git rm &lt;file&gt;</code>
+<code>git mv &lt;old_file&gt; &lt;new_file&gt;</code></p>
+
+<p>This is better than deleting the file in your working area</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=357" target="_blank">00:05:57</a></td><td><p>With using git add in patch mode the changes you make are separated into &ldquo;hunks&rdquo; where you can decide separately if a change should be applied or not</p>
+
+<p><code>git add -p</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/stashing" target="_blank">Stashing</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/stashing?t=10" target="_blank">00:00:10</a></td><td><p>To remove all the changes in your working area and apply only the changes that are in staging area use</p>
+
+<p><code>git checkout .</code> for all or <code>git checkout &lt;file_name&gt;</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/stashing?t=12" target="_blank">00:00:12</a></td><td><p>Git stash is a way to save uncomitted work</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/stashing?t=98" target="_blank">00:01:38</a></td><td><p>Git Stash Commands</p>
+
+<p>Stash changes</p>
+
+<p><code>git stash</code></p>
+
+<p>list changes</p>
+
+<p><code>git stash list</code></p>
+
+<p>show the contents</p>
+
+<p><code>git stash show stash@{0}</code></p>
+
+<p>apply the latest stash</p>
+
+<p><code>git stash apply</code></p>
+
+<p>apply specific stash</p>
+
+<p><code>git stash apply stash@{0}</code></p>
+
+<p>delete all your stashes</p>
+
+<p><code>git stash clear</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/stashing?t=479" target="_blank">00:07:59</a></td><td><p>patch mode also works with git stash</p>
+
+<p><code>git stash -p</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/staging-and-stashing-exercise" target="_blank">Staging and Stashing Exercise</a></h3>
+    <h2>References, Commits, Branches</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/references" target="_blank">References</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=8" target="_blank">00:00:08</a></td><td><p>Three types of git references</p>
+
+<ol>
+<li>Tags &amp; Annotated Tags</li>
+<li>Branches</li>
+<li>HEAD</li>
+</ol>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=28" target="_blank">00:00:28</a></td><td><p>A branch is a pointer to a particular commit</p>
+
+<p>The pointer of the current branch changes as new commits are made</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=46" target="_blank">00:00:46</a></td><td><p>HEAD is how git knows what branch you&rsquo;re currently on and what the next parent will be</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=80" target="_blank">00:01:20</a></td><td><p>HEAD usually points at the name of the current branch</p>
+
+<p>But it can point at a commit too, also known as <strong>detatched HEAD</strong></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=80" target="_blank">00:01:20</a></td><td><p>HEAD moves when:
+- making a commit in the currently active branch
+- By checking out to a new branch</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references?t=171" target="_blank">00:02:51</a></td><td><p>When creating a new branch with <code>git branch &lt;BRANCH_NAME</code> a new branch is created which points to the same commit as master.</p>
+
+<p>HEAD is still pointing to master</p>
+
+<p>When switching to this new branch HEAD points to the new branch</p>
+
+<p>Whit a new commit the pointer of the new branch will move together with HEAD</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/tags-annotated-tags" target="_blank">Tags & Annotated Tags</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/detached-head-dangling-commits" target="_blank">Detached Head & Dangling Commits</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/detached-head-dangling-commits?t=93" target="_blank">00:01:33</a></td><td><p>If you checkout to a specific commit (instead of a branch) or tag your HEAD is detached</p>
+
+<p>In detached mode you can make changes and commit them, but if you don&rsquo;t do anything with them they will be lost (BIG TROUBLE)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/detached-head-dangling-commits?t=152" target="_blank">00:02:32</a></td><td><p>To save the work when in detached mode, create a new branch that points to the last commit you made in detached state by:</p>
+
+<p><code>git branch &lt;new-branch-name&gt; &lt;commit&gt;</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/references-exercise" target="_blank">References Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/references-solution" target="_blank">References Solution</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/references-solution?t=17" target="_blank">00:00:17</a></td><td><p>merge commits are &ldquo;just commits&rdquo;, but unlike &ldquo;normal&rdquo; commits they have more than one parent.</p>
+
+<p>One parent could be the latest commit of a master branch, the other the latest commit of a feature branch</p>
+</td></tr>
+    </table>
+    <h2>Merging and Rebasing</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-fast-forward" target="_blank">Merging and Fast Forward</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-fast-forward?t=72" target="_blank">00:01:12</a></td><td><p>Fast forwarding:</p>
+
+<p>Fast forwarding happens when there is a &ldquo;clear path&rdquo; from the tip of the (current) feature branch to the tip of the (target) master branch</p>
+
+<p>The new commits were added to the top of the target branch and the pointer (master) is moved to the tip of the feature branch</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-fast-forward?t=193" target="_blank">00:03:13</a></td><td><p>Fast forwarding can be turned off using the no-ff flag</p>
+
+<p><code>git merge &lt;feature-branch&gt; --no-ff</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/merge-conflicts" target="_blank">Merge Conflicts</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/merge-conflicts?t=3" target="_blank">00:00:03</a></td><td><p>Merge conflicts in git happen when we try to merge but the changes in the branches are not compatible</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/merge-conflicts?t=70" target="_blank">00:01:10</a></td><td><p>Git ReReRe - Reuse Recorded Resolution</p>
+
+<p>When turned on git is going to save how you resolved a merge conflict. And with the next conflict git is going to use the same resolution.</p>
+
+<p>Turn it on by using</p>
+
+<p><code>git config rerere.enabled true</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-rerere-exercise" target="_blank">Merging and ReReRe Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-rerere-solution" target="_blank">Merging and ReReRe Solution</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/merging-and-rerere-solution?t=387" target="_blank">00:06:27</a></td><td><p>SHORTCUT: To checkout to the branch you were previously working on use</p>
+
+<p><code>git checkout -</code></p>
+</td></tr>
+    </table>
+    <h2>History and Diffs</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/useful-commit-messages" target="_blank">Useful Commit Messages</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/useful-commit-messages?t=251" target="_blank">00:04:11</a></td><td><p>Hot to commit messages:</p>
+
+<p>Short subject followed by a blank line</p>
+
+<p>than the description. Don&rsquo;t describe what you did. That should be visible from the code. Instead describe how you did it.</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-log" target="_blank">Git Log</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-log?t=51" target="_blank">00:00:51</a></td><td><p>Git log commands</p>
+
+<p>To see what changes happened since a certain point in time the since flag is useful</p>
+
+<p><code>git log --since=&quot;yesterday&quot;</code>
+<code>git log --since=&quot;2 weeks ago&quot;</code></p>
+
+<p>log files that have been moved or renamed
+<code>git log --name-status --follow -- &lt;file&gt;</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-log?t=123" target="_blank">00:02:03</a></td><td><p>Search for commit messages that match a regular expression</p>
+
+<p><code>git log -grep &lt;regexp&gt;</code> OR
+<code>got log --grep=&lt;regexp&gt; --author=thies --since=2.weeks</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-log?t=223" target="_blank">00:03:43</a></td><td><p>Referencing commits</p>
+
+<p><code>^</code>or <code>^n</code>
+- no arguments = <code>^1</code></p>
+
+<p><code>~</code> or <code>~n</code>
+no arguments = <code>~1</code>
+n: number of commits back</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs" target="_blank">Git Show and Diffs</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=4" target="_blank">00:00:04</a></td><td><p>Look at commits and their contents using</p>
+
+<p><code>git show &lt;commit&gt;</code></p>
+
+<p>If we want to show what files have been changed in the commit use</p>
+
+<p><code>git show &lt;commit&gt; --stat</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=118" target="_blank">00:01:58</a></td><td><p>To show difference between working area and latest commit use</p>
+
+<p><code>git diff</code></p>
+
+<p>or to see changes between working area and staging</p>
+
+<p><code>git diff --staged</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=169" target="_blank">00:02:49</a></td><td><p>Which branches are merged with master and can be cleaned</p>
+
+<p><code>git branch --merged master</code></p>
+
+<p>Which branches haven&rsquo;t been merged with master yet?</p>
+
+<p><code>git branch --no-merged master</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/history-and-diffs-exercise" target="_blank">History and Diffs Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/history-and-diffs-solution" target="_blank">History and Diffs Solution</a></h3>
+    <h2>Fixing Mistakes</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-checkout" target="_blank">Git Checkout</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-checkout?t=148" target="_blank">00:02:28</a></td><td><p>Staging area is often also called index in documentation</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-checkout?t=155" target="_blank">00:02:35</a></td><td><p>What happens when checkout a branch?</p>
+
+<ol>
+<li>Change HEAD to point to new branch</li>
+<li>Copy the commit snapshot to the staging area (Remember, staging area is never empty and has all the changes from previous commits)</li>
+<li>Update the working area with the branch contents</li>
+</ol>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-checkout?t=241" target="_blank">00:04:01</a></td><td><p>Besides checking out a branch you can also checkout a file by</p>
+
+<p><code>git checkout &lt;file&gt;</code> OR <code>git checkout .</code></p>
+
+<p>WARNING: This is a disruptive operation that cannot be turned back</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-checkout?t=364" target="_blank">00:06:04</a></td><td><p>it is also possible to apply the changes in a file from a certain commit by:</p>
+
+<p><code>git checkout &lt;commit&gt; -- &lt;file&gt;</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-clean-reset" target="_blank">Git Clean & Reset</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=14" target="_blank">00:00:14</a></td><td><p>Clear working area by deleting untracked files by</p>
+
+<p><code>git clean</code></p>
+
+<p>To see what is going to be deleted use</p>
+
+<p><code>git clean --dry-run</code> and <code>git clean --dry-run -df</code> to do clean files and directories</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=99" target="_blank">00:01:39</a></td><td><p>The action that Git reset performs depends on arguments</p>
+
+<p><strong>git reset with a path</strong></p>
+
+<p>Does not move the HEAD pointer, modifies files</p>
+
+<p><strong>git reset without a path</strong></p>
+
+<p>Moves the HEAD pointer, modifies files</p>
+
+<p>By default git performs a <code>git reset --mixed</code></p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=220" target="_blank">00:03:40</a></td><td><p>Three types of git reset</p>
+
+<ol>
+<li><code>git reset --soft HEAD~</code> =&gt; Moves the HEAD back by one commit</li>
+<li><code>git reset --mixed HEAD~</code>
+Moved the HEAD back by one commit and copies the files of the commit to the staging area</li>
+<li><code>git reset --hard</code> Moves HEAD, copies files from the commit to the staging and to the working area. CHANGES IN WORKING AREA WILL BE DELETED</li>
+</ol>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=487" target="_blank">00:08:07</a></td><td><p>With file specified: Copies the file from the commit to the staging area</p>
+
+<p><code>git reset &lt;commit&gt; -- &lt;file&gt;</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-revert" target="_blank">Git Revert</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-revert?t=4" target="_blank">00:00:04</a></td><td><p>Git revert is the &ldquo;save&rdquo; reset.</p>
+
+<p>It creates a new commit that introduces the opposite changes from the specified commit</p>
+
+<p>Unlike <code>reset</code> revert does not change history</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/fixing-git-mistakes-exercise" target="_blank">Fixing Git Mistakes Exercise</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/fixing-git-mistakes-exercise?t=11" target="_blank">00:00:11</a></td><td><p>ALWAYS REVERT FOR A SHARED REPOSITORY. Git reset can destroy other peoples work.</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/fixing-git-mistakes-solution" target="_blank">Fixing Git Mistakes Solution</a></h3>
+    <h2>Rebase and Amend</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-amend" target="_blank">Git Amend</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-amend?t=46" target="_blank">00:00:46</a></td><td><p>Amend creates a copy of the original commit as commits can&rsquo;t be edited. The original commit will be garbage collected at some point.</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/rebase" target="_blank">Rebase</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/rebase?t=54" target="_blank">00:00:54</a></td><td><p>Rebase means giving the commit a &ldquo;new parent&rdquo; aka a new base</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/rebase?t=120" target="_blank">00:02:00</a></td><td><p>To do a rebase, first check out to the branch you want to perform the rebase on. Then do <code>git rebase main</code> to rebase on the target branch.</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/rebase?t=142" target="_blank">00:02:22</a></td><td><p>Rebase is creating a copy of the original commit and applies it on top of the target branch (main)</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/rebase?t=185" target="_blank">00:03:05</a></td><td><p>Unlike merging, git rebase doesn&rsquo;t create an extra merge commit with two parents</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/rebase?t=213" target="_blank">00:03:33</a></td><td><p>Power of rebasing over merging: Replay commits:</p>
+
+<p>Before being &ldquo;replayed&rdquo; on top of the new HEAD, commits can be edited, removed, combined, re-ordered or inserted</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/fixup-and-autosquash" target="_blank">Fixup and Autosquash</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/fixup-and-autosquash?t=34" target="_blank">00:00:34</a></td><td><p>To add changes to a commit after other changes have been committed the <code>git commit --fixup &lt;SHA&gt;</code> command can be useful</p>
+
+<p>The change will be added as a fixup for the specified commit</p>
+
+<p>Afterwards <code>git rebase -i --autosquash &lt;SHA&gt;^</code>will squash the fixup commit automatically</p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/abort" target="_blank">Abort</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-rebase-and-amend-exercise" target="_blank">Git Rebase and Amend Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/git-rebase-and-amend-solution" target="_blank">Git Rebase and Amend Solution</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/git-rebase-and-amend-solution?t=217" target="_blank">00:03:37</a></td><td><p>Sidenote: Appending a file from the console with &gt;&gt;</p>
+
+<p><code>echo &quot;line to append&quot; &gt;&gt; myFile.txt</code></p>
+</td></tr>
+    </table>
+    <h2>Forks & Remote Repos</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/github-vs-git" target="_blank">GitHub vs. Git</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/remotes" target="_blank">Remotes</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/forks-pull-requests-upstreams" target="_blank">Forks, Pull Requests, & Upstreams</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/github-workflow" target="_blank">GitHub Workflow</a></h3>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/github-workflow?t=10" target="_blank">00:00:10</a></td><td><p>Triangular Workflow for Open Source Projects: You pull or fetch from upstream, then push to your fork and Merge Request from your fork to upstream</p>
+</td></tr>
+    </table>
+    <table>
+    <tr><td><a href="https://frontendmasters.com/courses/git-in-depth/github-workflow?t=88" target="_blank">00:01:28</a></td><td><p>By default git doesn&rsquo;t show which upstream branches are tracked. To show tracking branches use</p>
+
+<p><code>git branch -vv</code></p>
+</td></tr>
+    </table>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/forks-and-remote-repos-exercise" target="_blank">Forks and Remote Repos Exercise</a></h3>
+    <h2>Danger Zone</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/local-and-remote-destructive-operations" target="_blank">Local and Remote Destructive Operations</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/recover-lost-work" target="_blank">Recover Lost Work</a></h3>
+    <h2>GitHub</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/github-shortcuts" target="_blank">GitHub Shortcuts</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/continuous-integration" target="_blank">Continuous Integration</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/continuous-integration-exercise" target="_blank">Continuous Integration Exercise</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/continuous-integration-solution" target="_blank">Continuous Integration Solution</a></h3>
+    <h2>Advanced GitHub</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/github-api" target="_blank">GitHub API</a></h3>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/github-api-exercise" target="_blank">GitHub API Exercise</a></h3>
+    <h2>Wrapping Up</h2>
+    <h3><a href="https://frontendmasters.com/courses/git-in-depth/wrapping-up-git-in-depth" target="_blank">Wrapping Up "Git In-Depth"</a></h3>
+    </body>
+</html>

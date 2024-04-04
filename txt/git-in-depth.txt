@@ -1,0 +1,440 @@
+Git In-depth
+  Git Foundations
+    Data Storage
+    00:00:20: Git essentially operates as a key-value store where 
+
+value = data
+key = hash of 
+              the data
+              https://frontendmasters.com/courses/git-in-depth/data-storage?t=20
+    
+    Git Blobs and Trees
+    00:00:05: values are stored in git objects - one basic one is a blob. Git stores 
+              compressed data in a blob along with meta data in the header.
+              https://frontendmasters.com/courses/git-in-depth/git-blobs-and-trees?t=5
+    
+    00:13:19: Git compresses its objects into packfiles where the packfile stores the object 
+              itself and the deltas (differences between one version of the file and the next)
+              https://frontendmasters.com/courses/git-in-depth/git-blobs-and-trees?t=799
+    
+    Git Commits
+    00:00:20: git commits are also git objects that point to a tree and contains metadata like 
+              author, date etc..
+              https://frontendmasters.com/courses/git-in-depth/git-commits?t=20
+    
+    00:02:07: A commit is a code snapshot of the code at a certain point in time
+              https://frontendmasters.com/courses/git-in-depth/git-commits?t=127
+    
+    00:06:16: When you create a new commit it cannot be changed afterwards as it would result 
+              in a different SHA1. This is also a great security feature of Git.
+              https://frontendmasters.com/courses/git-in-depth/git-commits?t=376
+    
+    00:07:11: References are pointers to commit. It can be tags, branches or HEAD.
+
+HEAD is a 
+              pointer to the current commit
+              https://frontendmasters.com/courses/git-in-depth/git-commits?t=431
+    
+  Git Areas and Stashing
+    Working Area, Staging Area, Repository
+    00:00:11: Three areas in Git:
+
+1. Working area
+2. Staging area // git add changes
+3. 
+              Repository // git commit to add changes
+              https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=11
+    
+    00:04:40: Remove / Rename a file in your next commit with
+
+`git rm <file>`
+`git mv 
+              <old_file> <new_file>`
+
+This is better than deleting the file in your working 
+              area
+              https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=280
+    
+    00:05:57: With using git add in patch mode the changes you make are separated into "hunks" 
+              where you can decide separately if a change should be applied or not
+
+`git add 
+              -p`
+              https://frontendmasters.com/courses/git-in-depth/working-area-staging-area-repository?t=357
+    
+    Stashing
+    00:00:10: To remove all the changes in your working area and apply only the changes that 
+              are in staging area use
+
+`git checkout .` for all or `git checkout <file_name>`
+              https://frontendmasters.com/courses/git-in-depth/stashing?t=10
+    
+    00:00:12: Git stash is a way to save uncomitted work
+              https://frontendmasters.com/courses/git-in-depth/stashing?t=12
+    
+    00:01:38: Git Stash Commands
+
+Stash changes 
+
+`git stash`
+
+list changes
+
+`git stash 
+              list`
+
+show the contents 
+
+`git stash show stash@{0}`
+
+apply the latest 
+              stash
+
+`git stash apply`
+
+apply specific stash 
+
+`git stash apply 
+              stash@{0}`
+
+delete all your stashes
+
+`git stash clear`
+              https://frontendmasters.com/courses/git-in-depth/stashing?t=98
+    
+    00:07:59: patch mode also works with git stash
+
+`git stash -p`
+              https://frontendmasters.com/courses/git-in-depth/stashing?t=479
+    
+  References, Commits, Branches
+    References
+    00:00:08: Three types of git references
+
+1. Tags & Annotated Tags
+2. Branches
+3. HEAD
+              https://frontendmasters.com/courses/git-in-depth/references?t=8
+    
+    00:00:28: A branch is a pointer to a particular commit
+
+The pointer of the current branch 
+              changes as new commits are made
+              https://frontendmasters.com/courses/git-in-depth/references?t=28
+    
+    00:00:46: HEAD is how git knows what branch you're currently on and what the next parent 
+              will be
+              https://frontendmasters.com/courses/git-in-depth/references?t=46
+    
+    00:01:20: HEAD usually points at the name of the current branch
+
+But it can point at a 
+              commit too, also known as **detatched HEAD**
+              https://frontendmasters.com/courses/git-in-depth/references?t=80
+    
+    00:01:20: HEAD moves when:
+- making a commit in the currently active branch
+- By checking 
+              out to a new branch
+              https://frontendmasters.com/courses/git-in-depth/references?t=80
+    
+    00:02:51: When creating a new branch with `git branch <BRANCH_NAME` a new branch is 
+              created which points to the same commit as master. 
+
+HEAD is still pointing to 
+              master
+
+When switching to this new branch HEAD points to the new branch
+
+Whit a 
+              new commit the pointer of the new branch will move together with HEAD
+              https://frontendmasters.com/courses/git-in-depth/references?t=171
+    
+    Detached Head & Dangling Commits
+    00:01:33: If you checkout to a specific commit (instead of a branch) or tag your HEAD is 
+              detached
+
+In detached mode you can make changes and commit them, but if you 
+              don't do anything with them they will be lost (BIG TROUBLE)
+              https://frontendmasters.com/courses/git-in-depth/detached-head-dangling-commits?t=93
+    
+    00:02:32: To save the work when in detached mode, create a new branch that points to the 
+              last commit you made in detached state by: 
+
+`git branch <new-branch-name> 
+              <commit>`
+              https://frontendmasters.com/courses/git-in-depth/detached-head-dangling-commits?t=152
+    
+    References Solution
+    00:00:17: merge commits are "just commits", but unlike "normal" commits they have more 
+              than one parent.
+
+One parent could be the latest commit of a master branch, the 
+              other the latest commit of a feature branch
+              https://frontendmasters.com/courses/git-in-depth/references-solution?t=17
+    
+  Merging and Rebasing
+    Merging and Fast Forward
+    00:01:12: Fast forwarding: 
+
+Fast forwarding happens when there is a "clear path" from the 
+              tip of the (current) feature branch to the tip of the (target) master branch 
+              
+
+The new commits were added to the top of the target branch and the pointer 
+              (master) is moved to the tip of the feature branch
+              https://frontendmasters.com/courses/git-in-depth/merging-and-fast-forward?t=72
+    
+    00:03:13: Fast forwarding can be turned off using the no-ff flag
+
+`git merge 
+              <feature-branch> --no-ff`
+              https://frontendmasters.com/courses/git-in-depth/merging-and-fast-forward?t=193
+    
+    Merge Conflicts
+    00:00:03: Merge conflicts in git happen when we try to merge but the changes in the 
+              branches are not compatible
+              https://frontendmasters.com/courses/git-in-depth/merge-conflicts?t=3
+    
+    00:01:10: Git ReReRe - Reuse Recorded Resolution
+
+When turned on git is going to save how 
+              you resolved a merge conflict. And with the next conflict git is going to use 
+              the same resolution. 
+
+Turn it on by using
+
+`git config rerere.enabled true`
+              https://frontendmasters.com/courses/git-in-depth/merge-conflicts?t=70
+    
+    Merging and ReReRe Solution
+    00:06:27: SHORTCUT: To checkout to the branch you were previously working on use 
+
+`git 
+              checkout -`
+              https://frontendmasters.com/courses/git-in-depth/merging-and-rerere-solution?t=387
+    
+  History and Diffs
+    Useful Commit Messages
+    00:04:11: Hot to commit messages: 
+
+Short subject followed by a blank line 
+
+than the 
+              description. Don't describe what you did. That should be visible from the code. 
+              Instead describe how you did it.
+              https://frontendmasters.com/courses/git-in-depth/useful-commit-messages?t=251
+    
+    Git Log
+    00:00:51: Git log commands
+
+To see what changes happened since a certain point in time the 
+              since flag is useful
+
+`git log --since="yesterday"`
+`git log --since="2 weeks 
+              ago"`
+
+log files that have been moved or renamed
+`git log --name-status --follow 
+              -- <file>`
+              https://frontendmasters.com/courses/git-in-depth/git-log?t=51
+    
+    00:02:03: Search for commit messages that match a regular expression 
+
+`git log -grep 
+              <regexp>` OR
+`got log --grep=<regexp> --author=thies --since=2.weeks`
+              https://frontendmasters.com/courses/git-in-depth/git-log?t=123
+    
+    00:03:43: Referencing commits
+
+`^`or `^n`
+- no arguments = `^1`
+
+`~` or `~n`
+no arguments 
+              = `~1`
+n: number of commits back
+              https://frontendmasters.com/courses/git-in-depth/git-log?t=223
+    
+    Git Show and Diffs
+    00:00:04: Look at commits and their contents using 
+
+`git show <commit>`
+
+If we want to 
+              show what files have been changed in the commit use
+
+`git show <commit> --stat`
+              https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=4
+    
+    00:01:58: To show difference between working area and latest commit use 
+
+`git diff`
+
+or 
+              to see changes between working area and staging 
+
+`git diff --staged`
+              https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=118
+    
+    00:02:49: Which branches are merged with master and can be cleaned
+
+`git branch --merged 
+              master`
+
+Which branches haven't been merged with master yet?
+
+`git branch 
+              --no-merged master`
+              https://frontendmasters.com/courses/git-in-depth/git-show-and-diffs?t=169
+    
+  Fixing Mistakes
+    Git Checkout
+    00:02:28: Staging area is often also called index in documentation
+              https://frontendmasters.com/courses/git-in-depth/git-checkout?t=148
+    
+    00:02:35: What happens when checkout a branch?
+
+1. Change HEAD to point to new branch
+2. 
+              Copy the commit snapshot to the staging area (Remember, staging area is never 
+              empty and has all the changes from previous commits)
+3. Update the working area 
+              with the branch contents
+              https://frontendmasters.com/courses/git-in-depth/git-checkout?t=155
+    
+    00:04:01: Besides checking out a branch you can also checkout a file by
+
+`git checkout 
+              <file>` OR `git checkout .`
+
+WARNING: This is a disruptive operation that cannot 
+              be turned back
+              https://frontendmasters.com/courses/git-in-depth/git-checkout?t=241
+    
+    00:06:04: it is also possible to apply the changes in a file from a certain commit by: 
+              
+
+`git checkout <commit> -- <file>`
+              https://frontendmasters.com/courses/git-in-depth/git-checkout?t=364
+    
+    Git Clean & Reset
+    00:00:14: Clear working area by deleting untracked files by
+
+`git clean`
+
+To see what is 
+              going to be deleted use
+
+`git clean --dry-run` and `git clean --dry-run -df` to 
+              do clean files and directories
+              https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=14
+    
+    00:01:39: The action that Git reset performs depends on arguments
+
+**git reset with a 
+              path**
+
+Does not move the HEAD pointer, modifies files
+
+**git reset without a 
+              path**
+
+Moves the HEAD pointer, modifies files
+
+By default git performs a `git 
+              reset --mixed`
+              https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=99
+    
+    00:03:40: Three types of git reset
+
+1. `git reset --soft HEAD~` => Moves the HEAD back by 
+              one commit
+2. `git reset --mixed HEAD~`
+Moved the HEAD back by one commit and 
+              copies the files of the commit to the staging area
+3. `git reset --hard` Moves 
+              HEAD, copies files from the commit to the staging and to the working area. 
+              CHANGES IN WORKING AREA WILL BE DELETED
+              https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=220
+    
+    00:08:07: With file specified: Copies the file from the commit to the staging area
+
+`git 
+              reset <commit> -- <file>`
+              https://frontendmasters.com/courses/git-in-depth/git-clean-reset?t=487
+    
+    Git Revert
+    00:00:04: Git revert is the "save" reset. 
+
+It creates a new commit that introduces the 
+              opposite changes from the specified commit
+
+Unlike `reset` revert does not 
+              change history
+              https://frontendmasters.com/courses/git-in-depth/git-revert?t=4
+    
+    Fixing Git Mistakes Exercise
+    00:00:11: ALWAYS REVERT FOR A SHARED REPOSITORY. Git reset can destroy other peoples work.
+              https://frontendmasters.com/courses/git-in-depth/fixing-git-mistakes-exercise?t=11
+    
+  Rebase and Amend
+    Git Amend
+    00:00:46: Amend creates a copy of the original commit as commits can't be edited. The 
+              original commit will be garbage collected at some point.
+              https://frontendmasters.com/courses/git-in-depth/git-amend?t=46
+    
+    Rebase
+    00:00:54: Rebase means giving the commit a "new parent" aka a new base
+              https://frontendmasters.com/courses/git-in-depth/rebase?t=54
+    
+    00:02:00: To do a rebase, first check out to the branch you want to perform the rebase on. 
+              Then do `git rebase main` to rebase on the target branch.
+              https://frontendmasters.com/courses/git-in-depth/rebase?t=120
+    
+    00:02:22: Rebase is creating a copy of the original commit and applies it on top of the 
+              target branch (main)
+              https://frontendmasters.com/courses/git-in-depth/rebase?t=142
+    
+    00:03:05: Unlike merging, git rebase doesn't create an extra merge commit with two parents
+              https://frontendmasters.com/courses/git-in-depth/rebase?t=185
+    
+    00:03:33: Power of rebasing over merging: Replay commits:
+
+Before being "replayed" on top 
+              of the new HEAD, commits can be edited, removed, combined, re-ordered or 
+              inserted
+              https://frontendmasters.com/courses/git-in-depth/rebase?t=213
+    
+    Fixup and Autosquash
+    00:00:34: To add changes to a commit after other changes have been committed the `git 
+              commit --fixup <SHA>` command can be useful
+
+The change will be added as a fixup 
+              for the specified commit
+
+Afterwards `git rebase -i --autosquash <SHA>^`will 
+              squash the fixup commit automatically
+              https://frontendmasters.com/courses/git-in-depth/fixup-and-autosquash?t=34
+    
+    Git Rebase and Amend Solution
+    00:03:37: Sidenote: Appending a file from the console with >> 
+
+`echo "line to append" >> 
+              myFile.txt`
+              https://frontendmasters.com/courses/git-in-depth/git-rebase-and-amend-solution?t=217
+    
+  Forks & Remote Repos
+    GitHub Workflow
+    00:00:10: Triangular Workflow for Open Source Projects: You pull or fetch from upstream, 
+              then push to your fork and Merge Request from your fork to upstream
+              https://frontendmasters.com/courses/git-in-depth/github-workflow?t=10
+    
+    00:01:28: By default git doesn't show which upstream branches are tracked. To show 
+              tracking branches use 
+
+`git branch -vv`
+              https://frontendmasters.com/courses/git-in-depth/github-workflow?t=88
+    
